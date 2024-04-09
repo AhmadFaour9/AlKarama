@@ -8,13 +8,13 @@ import axios from 'axios';
 import { AboutFan, About_team, Advertisements, BossOfTeam, Fans, Footer, StrategyOfTeam, TeamPlayers, TechnicalStaff, TopOfAboutPage } from '../../Sections';
 
 const About = () => {
-  const [news, setNews] = useState()
+  const [assosiations, setAssosiations] = useState()
 
   useEffect(() => {
-    axios.get(`${config.baseUrl}/${config.newsAll}`)
+    axios.get(`${config.baseUrl}/${config.associations}`)
       .then(res => {
         console.log(res.data.data)
-        setNews(res.data.data)
+        setAssosiations(res.data.data)
       })
       .catch(err => console.log(err))
   }, [])
@@ -38,7 +38,7 @@ const About = () => {
     <div className='team-players'> <TeamPlayers /></div>
     <div className='strategy-of-team'><StrategyOfTeam /></div>
     <div className='fans'><Fans /></div>
-    <div className='about-fan'><AboutFan data={news && news} /></div>
+    <div className='about-fan'><AboutFan data={assosiations && assosiations} /></div>
     <div className='footer'><Footer /></div>
   </div>
   );

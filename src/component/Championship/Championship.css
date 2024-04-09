@@ -20,6 +20,10 @@
   direction: rtl;
 }
 
+.texting div {
+  padding: 50px;
+}
+
 .texting p {
   background-color: #194e95;
   color: whitesmoke;
@@ -34,7 +38,7 @@
 }
 
 @media (max-width:1000px) {
-  .texting div{
+  .texting div {
     font-size: 26px;
     padding: 50px;
   }
